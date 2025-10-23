@@ -1,0 +1,84 @@
+# compiled output
+/backend/nest_server/dist
+/backend/nest_server/node_modules
+/backend/nest_server/build
+
+# Logs
+/backend/nest_server/logs
+/backend/nest_server/*.log
+/backend/nest_server/npm-debug.log*
+/backend/nest_server/pnpm-debug.log*
+/backend/nest_server/yarn-debug.log*
+/backend/nest_server/yarn-error.log*
+/backend/nest_server/lerna-debug.log*
+
+# OS
+/backend/nest_server/.DS_Store
+
+# Tests
+/backend/nest_server/coverage
+/backend/nest_server/.nyc_output
+
+# IDEs and editors
+/backend/nest_server/.idea
+/backend/nest_server/.project
+/backend/nest_server/.classpath
+/backend/nest_server/.c9/
+/backend/nest_server/*.launch
+/backend/nest_server/.settings/
+/backend/nest_server/*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# dotenv environment variable files
+/backend/nest_server/.env
+/backend/nest_server/.env.development.local
+/backend/nest_server/.env.test.local
+/backend/nest_server/.env.production.local
+/backend/nest_server/.env.local
+
+# temp directory
+.temp
+.tmp
+
+# Runtime data
+/backend/nest_server/pids
+/backend/nest_server/*.pid
+/backend/nest_server/*.seed
+/backend/nest_server/*.pid.lock
+
+# Diagnostic reports (https://nodejs.org/api/report.html)
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+
+
+# Logs
+/frontend/vite-project/logs
+/frontend/vite-project/*.log
+/frontend/vite-project/npm-debug.log*
+/frontend/vite-project/yarn-debug.log*
+/frontend/vite-project/yarn-error.log*
+/frontend/vite-project/pnpm-debug.log*
+/frontend/vite-project/lerna-debug.log*
+
+/frontend/vite-project/node_modules
+/frontend/vite-project/dist
+/frontend/vite-project/dist-ssr
+/frontend/vite-project/*.local
+
+# Editor directories and files
+/frontend/vite-project/.vscode/*
+/frontend/vite-project/!.vscode/extensions.json
+/frontend/vite-project/.idea
+/frontend/vite-project/.DS_Store
+/frontend/vite-project/*.suo
+/frontend/vite-project/*.ntvs*
+/frontend/vite-project/*.njsproj
+/frontend/vite-project/*.sln
+/frontend/vite-project/*.sw?
+

@@ -1,0 +1,32 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type UserType {
+  id: String!
+  name: String!
+  desc: String!
+
+  """账户信息"""
+  account: String!
+}
+
+type Query {
+  """使用id 查询用户"""
+  getUserById(id: String!): UserType
+}
+
+type Mutation {
+  """新建用户"""
+  create(params: UserInputType!): Boolean!
+}
+
+input UserInputType {
+  name: String!
+  desc: String!
+  tel: String!
+  password: String!
+
+  """账户信息"""
+  account: String!
+}
