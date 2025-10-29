@@ -14,3 +14,7 @@ https://www.apollographql.com/docs/apollo-server/testing/mocking
 npm create vite
 pnpm i eslint-config-airbnb eslint-config-airbnb-typescript eslint-plugin-import eslint-plugin-jsx-a11y   
 pnpm i @apollo/client graphql
+
+
+其他工具：git-graph,git-history
+

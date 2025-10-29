@@ -6,6 +6,8 @@ import { UserModule } from './modules/user/user.modules';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver,ApolloDriverConfig} from '@nestjs/apollo';
 import { join } from 'path';
+import { OSSModule } from './modules/oss/oss.modules';
+import { AuthModule } from './modules/auth/auth.modules';
 
 @Module({
   imports: [
@@ -28,6 +30,8 @@ import { join } from 'path';
       playground: true, // 或者 introspection: true
     }),
     UserModule,
+    OSSModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],

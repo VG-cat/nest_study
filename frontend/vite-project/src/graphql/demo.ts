@@ -7,3 +7,15 @@ export const FIND = gql`
   }
 }
 `;
+
+export const GET_SIGNATURE = gql`
+   query getSignature{
+  getSignature{
+    exprie,
+    signature,
+    accessid,
+    dir,
+    host
+  }
+}
+`;

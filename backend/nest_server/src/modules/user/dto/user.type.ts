@@ -12,6 +12,10 @@ export class UserType {
     desc?: string;
     @Field({description:'账户信息'})
     account?: string;
+    @Field({description:'验证码'})
+    code?: string;
+    @Field({description:'验证码'})
+    tel?: string;
 }
 
 // 输入类型

@@ -2,6 +2,7 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { User } from './models/user.entity';
 import { DeepPartial, Repository } from 'typeorm';
+import { run } from 'node:test';
 
 //用于操作数据库
 @Injectable()
@@ -46,5 +47,30 @@ export class UserService {
             throw new NotFoundException(`User with ID ${id} not found`);
         }
         return res
+    }
+
+    async findByTel(tel:string):Promise<User | null>{
+        const res = await this.UserRepository.findOne({
+            where:{
+                tel
+            }
+        });
+
+        if (!res) {
+            return null;
+        }
+        return res
+    }
+
+    async updateCode(id:string,code:string,codeCreateTimeAt:Date):Promise<Boolean>{
+        const res = await this.UserRepository.update(
+            id,{code,codeCreateTimeAt}
+        );
+
+        if(res.affected && res.affected > 0){
+            return true;
+        }
+        return false;
+
     }
 }
