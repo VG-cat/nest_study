@@ -29,11 +29,15 @@ type OssType {
 type Result {
   code: Int!
   message: String!
+  data: String
 }
 
 type Query {
   """使用id 查询用户"""
-  getUserById(id: String!): UserType
+  getUserById: UserType
+
+  """使用id 查询用户"""
+  getUserInfo: UserType
 
   """查询oss凭证"""
   getSignature: OssType!
@@ -47,7 +51,7 @@ type Mutation {
   getAuthCode(tel: String!): Result!
 
   """校验验证码"""
-  validateCode(tel: String!, code: String!): Boolean!
+  validateCode(tel: String!, code: String!): Result!
 }
 
 input UserInputType {

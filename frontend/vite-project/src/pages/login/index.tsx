@@ -1,8 +1,9 @@
 import React, { useRef } from 'react'
 import { Button, Form, Input } from 'antd-mobile'
 import { useMutation } from '@apollo/client/react';
-import { GET_AUTHCODE, VALIDATE_CODE } from '../../graphql/auth';
+import { GET_AUTHCODE, VALIDATE_CODE } from '@/graphql/auth';
 import type { FormInstance } from 'antd-mobile/es/components/form';
+import { useNavigate } from 'react-router-dom';
 
 
 const Login = function () {
@@ -11,6 +12,7 @@ const Login = function () {
   const [login] = useMutation(VALIDATE_CODE);
   const formRef = React.createRef<FormInstance>()
 
+  const nav = useNavigate();
 
   const handleSendCode = () => {
     const tel = formRef.current?.getFieldValue('tel')
@@ -31,7 +33,10 @@ const Login = function () {
     console.log(res);
 
     if (res.data && res.data?.validateCode) {
-      alert('登录成功')
+      localStorage.setItem('token',res.data?.validateCode.data)
+      alert('登录成功');
+      nav('/404');
+
     } else {
       alert('登录失败')
     }

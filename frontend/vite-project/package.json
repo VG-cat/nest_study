@@ -11,8 +11,10 @@
     "mock": "node ./mock/index.js"
   },
   "dependencies": {
+    "@ant-design/pro-components": "^2.8.10",
     "@apollo/client": "^4.0.7",
     "@apollo/server": "^5.0.0",
+    "@types/passport-jwt": "^4.0.1",
     "antd-mobile": "^5.41.1",
     "graphql": "^16.11.0",
     "less": "^4.4.2",

@@ -73,4 +73,15 @@ export class UserService {
         return false;
 
     }
+    //分页
+    async findUsers({strat,length}):Promise<[User[],number]>{
+        return this.UserRepository.findAndCount({
+            take:length,
+            skip:strat,
+            order:{
+                createdAt:'DESC',
+            }
+        })
+
+    }
 }

@@ -2,9 +2,12 @@
 import { Resolver, Query, Args, ObjectType, Field, Mutation } from '@nestjs/graphql';
 import { OssType } from './dto/oss.type';
 import { OSSService } from './oss.service';
+import { UseGuards } from '@nestjs/common';
+import { GqlAuthGuard } from '@/common/guards/auth.guards';
 
 
-@Resolver() 
+@Resolver()
+@UseGuards(GqlAuthGuard)  //使用验证守卫
 export class OSSResolver {
   constructor(private readonly ossService:OSSService) {}
 

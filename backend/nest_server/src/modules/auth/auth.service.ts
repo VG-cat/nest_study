@@ -5,6 +5,7 @@ import { UserService } from '../user/user.service';
 import dayjs from 'dayjs';
 import { Result } from 'src/common/dto/result.type';
 import { RESULT_CODE } from 'src/common/constants/code';
+import { JwtService } from '@nestjs/jwt';
 
 
 //发送端验证码
@@ -12,7 +13,8 @@ import { RESULT_CODE } from 'src/common/constants/code';
 export class AuthService {
     constructor(
         private readonly userService: UserService,
-    ) { }
+        private readonly jwtService:JwtService
+    ) {}
 
     async getAuthCode(tel: string): Promise<Result> {
         //阿里云短信服务
@@ -44,13 +46,23 @@ export class AuthService {
         }
     }
 
-    async validateCode(tel: string, code: string): Promise<Boolean> {
+    async validateCode(tel: string, code: string): Promise<Result> {
 
         const user = await this.userService.findByTel(tel)
         //不超过一分钟
         if (user && code == user.code && dayjs().diff(dayjs(user.codeCreateTimeAt)) <= 60 * 1000) {
-            return true;
+            const token = this.jwtService.sign({
+                id:user.id
+            })
+            return {
+                code:RESULT_CODE.SUCCESS,
+                message:'验证成功',
+                data:token
+            };
         }
-        return false;
+        return {
+            code:RESULT_CODE.FAIL,
+            message:'验证失败'
+        };
     }
 }

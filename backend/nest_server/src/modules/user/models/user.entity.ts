@@ -1,12 +1,12 @@
 //typeorm  类型映射
+import { CommonEntry } from '@/common/entries/common.entry';
+import { OrgImage } from '@/modules/orgImage/models/orgImage.entry';
 import { IsNotEmpty } from 'class-validator';
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, OneToOne, PrimaryGeneratedColumn } from 'typeorm';
 
 // eslint-disable-next-line @typescript-eslint/no-unsafe-call
 @Entity('user')
-export class User {
-  @PrimaryGeneratedColumn('uuid')
-  id:string;
+export class User extends CommonEntry{
 
   @Column({
     comment:'昵称',
@@ -48,4 +48,7 @@ export class User {
     nullable:true
   })
   codeCreateTimeAt: Date;
+
+  @OneToOne(()=>OrgImage,(org)=>org.orgIdForFront)
+  avator:OrgImage
 }

@@ -7,8 +7,8 @@ import dayjs from 'dayjs';
 import { access } from 'fs';
 
 const config = {
-    accessKeyId:''
-    accessKeySecret: ''
+    accessKeyId:'',
+    accessKeySecret: '',
     bucket:'ossdhimage',
     dir:'imgs/'
 }

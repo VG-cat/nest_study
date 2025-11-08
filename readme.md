@@ -4,7 +4,10 @@ pnpm i typeorm
 pnpm i class-validator
 pnpm i @nestjs/typeorm
 pnpm install mysql2
-pnpm i graphql apollo-server-express @nestjs/graphql @nestjs/apollo            
+pnpm i graphql apollo-server-express @nestjs/graphql @nestjs/apollo   
+
+pnpm i @nestjs/jwt @nestjs/passport passport-jwt 
+pnpm i  @types/passport-jwt
 
 微信小程序h5
 

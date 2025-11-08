@@ -19,5 +19,18 @@ export default defineConfig([
       ecmaVersion: 2020,
       globals: globals.browser,
     },
+    settings:{
+      react : {
+        'version':'detect',
+      },
+      'import/resolver':{
+        'alias':{
+          'map':[
+            ['@','./src']
+          ],
+          'extensions':['.ts,.tsx']
+        }
+      }
+    }
   },
 ])
