@@ -4,6 +4,11 @@ import path from 'path'
 
 // https://vite.dev/config/
 export default defineConfig({
+  server:{
+    host:'0.0.0.0',
+    cors:true,
+    open:true
+  },
   plugins: [react()],
   resolve: {
     alias:[
