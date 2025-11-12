@@ -8,6 +8,7 @@ import { ApolloDriver,ApolloDriverConfig} from '@nestjs/apollo';
 import { join } from 'path';
 import { OSSModule } from './modules/oss/oss.modules';
 import { AuthModule } from './modules/auth/auth.modules';
+import { WxpayModule } from './modules/wxpay/wxpay.module';
 
 @Module({
   imports: [
@@ -32,6 +33,7 @@ import { AuthModule } from './modules/auth/auth.modules';
     UserModule,
     OSSModule,
     AuthModule,
+    WxpayModule
   ],
   controllers: [AppController],
   providers: [AppService],
