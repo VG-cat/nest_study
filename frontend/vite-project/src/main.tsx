@@ -12,6 +12,11 @@ import { ROUTE_CONFIG } from '@/routes/index.ts'
 import { NonePage } from '@/pages/404.tsx'
 import UserInfo from '@/components/userInfo'
 import Layout from '@/components/Layout/index.tsx'
+import { config } from 'dotenv'
+
+
+config();
+console.log(process.env.PORT);
 
 createRoot(document.getElementById('root')!).render(
   <ConfigProvider locale={zhCN}>
