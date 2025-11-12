@@ -39,7 +39,7 @@ export const usePullToRefresh = (onRefresh: () => void) => {
 
             }
         };
-
+ 
         return () => {
             if (!containerRef.current) return;
             containerRef.current.ontouchstart = null;
